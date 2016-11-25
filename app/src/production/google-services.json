@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "752640971408",
+    "firebase_url": "https://ireca-menu.firebaseio.com",
+    "project_id": "ireca-menu",
+    "storage_bucket": "ireca-menu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:752640971408:android:94f9000599579b8d",
+        "android_client_info": {
+          "package_name": "ru.ireca.menu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "752640971408-l2phtdqaa8r2qo4pp8vv51dvspse9328.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJUoFJQ1AzVQ1Mpu7BzLOyE0Cb0OQF06o"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
