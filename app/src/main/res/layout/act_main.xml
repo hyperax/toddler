@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -27,17 +28,25 @@
 
         </android.support.design.widget.AppBarLayout>
 
-        <FrameLayout
+        <LinearLayout
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:orientation="vertical"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text='@{"Hello! I am " + toddler.name() + "!"}' />
-        </FrameLayout>
+                android:text='@{"Hello! I am " + toddler.name() + "!"}'
+                tools:text="asdfaewfdfsdf asdfsadf aasdfsdf"/>
+
+            <Button
+                android:id="@+id/loadDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="load distance to Praga"/>
+        </LinearLayout>
 
     </android.support.design.widget.CoordinatorLayout>
 </layout>

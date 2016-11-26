@@ -2,6 +2,7 @@ package ru.toddler.di;
 
 import dagger.Component;
 import ru.toddler.ToddlerApp;
+import ru.toddler.di.module.ApiModule;
 import ru.toddler.di.module.AppModule;
 import ru.toddler.di.module.DataModule;
 import ru.toddler.di.module.NetworkModule;
@@ -14,7 +15,7 @@ import ru.toddler.view.dialog.BaseDialogFragment;
 import ru.toddler.view.fragment.BaseFragment;
 
 @PerApplication
-@Component(modules = {AppModule.class, DataModule.class, NetworkModule.class,
+@Component(modules = {ApiModule.class, AppModule.class, DataModule.class, NetworkModule.class,
         RepositoriesModule.class, NotificationsModule.class})
 public interface AppComponent {
 
