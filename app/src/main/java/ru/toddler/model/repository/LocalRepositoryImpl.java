@@ -10,14 +10,14 @@ import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
+import io.reactivex.Observable;
+import io.reactivex.subjects.PublishSubject;
 import nl.qbusict.cupboard.CupboardFactory;
 import nl.qbusict.cupboard.DatabaseCompartment;
 import ru.toddler.di.scope.PerApplication;
-import ru.toddler.model.entity.contract.Contract;
+import ru.toddler.model.storage.entity.contract.Contract;
 import ru.toddler.util.DateUtils;
 import ru.toddler.util.NpeUtils;
-import rx.Observable;
-import rx.subjects.PublishSubject;
 
 import static ru.toddler.util.SqlUtils.in;
 
@@ -112,10 +112,9 @@ public class LocalRepositoryImpl implements LocalRepository {
 
     @Override
     public Observable<Long> changes(Class<?> entityClass) {
-        return changesBus.asObservable()
+        return changesBus.hide()
                 .filter(changedEntityClass -> entityClass == changedEntityClass)
                 .map(entity -> DateUtils.getCurrentMillis())
-                .onBackpressureLatest()
                 .debounce(ENTITY_CHANGES_TIMEOUT, TimeUnit.MILLISECONDS);
     }
 

@@ -12,7 +12,7 @@ import nl.qbusict.cupboard.Cupboard;
 import nl.qbusict.cupboard.CupboardBuilder;
 import nl.qbusict.cupboard.CupboardFactory;
 import ru.toddler.di.scope.PerApplication;
-import ru.toddler.model.entity.contract.Contract;
+import ru.toddler.model.storage.entity.contract.Contract;
 import ru.toddler.model.storage.converter.BigDecimalFieldConverter;
 import ru.toddler.model.storage.converter.LongArrayFieldConverter;
 import ru.toddler.model.storage.converter.StringArrayFieldConverter;

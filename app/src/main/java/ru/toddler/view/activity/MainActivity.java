@@ -24,6 +24,7 @@ public class MainActivity extends PresenterActivity<ToddlerPresenter, ToddlerVie
         super.onCreate(savedInstanceState);
         getAppComponent().inject(this);
         binding = bindView(R.layout.act_main);
+        binding.loadDistance.setOnClickListener(view -> presenter.loadDistance());
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setTitle(R.string.app_name);
     }

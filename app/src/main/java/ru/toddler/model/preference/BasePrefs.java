@@ -9,9 +9,9 @@ import android.support.annotation.Nullable;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import io.reactivex.Observable;
+import io.reactivex.subjects.PublishSubject;
 import ru.toddler.util.DateUtils;
-import rx.Observable;
-import rx.subjects.PublishSubject;
 
 public abstract class BasePrefs {
 
@@ -37,10 +37,9 @@ public abstract class BasePrefs {
 
     @NonNull
     public Observable<Long> changes(@NonNull String prefName) {
-        return changesBus.asObservable()
+        return changesBus.hide()
                 .filter(changedPrefName -> changedPrefName.equalsIgnoreCase(prefName))
                 .map(entity -> DateUtils.getCurrentMillis())
-                .onBackpressureLatest()
                 .debounce(PREFERENCE_CHANGES_TIMEOUT, TimeUnit.MILLISECONDS);
     }
 
